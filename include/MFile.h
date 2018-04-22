@@ -4,9 +4,12 @@
 #include<string>
 
 class MFile{
-  private:
-    int tempo;
-    double time_sig;
+    private:
+        int tempo;
+        double time_sig;
+    
+    public:
+        MFile(int tempo, double time_sig);
 };
 
 #endif
