@@ -2,11 +2,11 @@ import random
 import sys
 import os
 
+    
+#A Aminor B Bminor C E F Gminor G Aminor A Bminor B, so Key is 0-12
 
-glist = ['Juice', 'Tomatoes', 'Potatoes', 'Bananas']
+key_value = random.randrange(0,13)
 
-random_num = random.randrange(0, 100)
+oct_value = random.randrange(0,13)
 
-while(random_num != 15, 16):
-    print(random_num)
-    random_num = random.randrange(0,100)
+
