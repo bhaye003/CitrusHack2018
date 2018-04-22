@@ -2,13 +2,13 @@
 
 using namespace std;
 
-Note::Note(int pitch, double length, int velocity){
+Note::Note(string pitch, double length, int velocity){
     this->pitch = pitch;
     this->length = length;
     this->velocity = velocity;
 }
 
-int Note::getPitch(){
+string Note::getPitch(){
    cout << this->pitch << endl;
 }
 

@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 
-classs Note {
+class Note {
     public:
         Note(string pitch, double length, int velocity);
         getPitch();
