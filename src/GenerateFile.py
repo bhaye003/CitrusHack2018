@@ -15,13 +15,13 @@ class GenerateFile:
 		pattern = midi.Pattern()
 		track = midi.Track()
 		curr_ticks = 0
-		max_ticks = 400 * self.bars
+		max_ticks = 1000 * self.bars
 		t = midi.SetTempoEvent()
 		t.set_bpm(self.tempo)
 
 		pattern.append(track)
 
-		while(curr_ticks < self.tempo):			
+		while(curr_ticks < max_ticks):			
 			space = random.randrange(0, 101)
 			p = self.generateChar();
 			insertNote = midi.NoteOnEvent(tick=curr_ticks, velocity=self.velocity, pitch=p)
@@ -31,6 +31,7 @@ class GenerateFile:
 				curr_ticks += space
 			track.append(insertNote)
 			endNode = midi.NoteOffEvent(tick=curr_ticks, pitch=p)
+			track.append(endNode)
 		eot = midi.EndOfTrackEvent(tick=1)
 		track.append(eot)
 		userString = raw_input("Please enter the file name:")
@@ -67,7 +68,7 @@ class GenerateFile:
 				else:
 					nchar = "G_s"
 
-				octave = random.randrange(0, 13)
+				octave = random.randrange(4, 10)
 				retNote = note + octave
 				return retNote
 
