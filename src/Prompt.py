@@ -1,8 +1,14 @@
 import midi
 import random
+import GenerateFile
 
 class Prompt:
+<<<<<<< HEAD
     def Options(self, bars, isVel, vel, scale, tempo):
+=======
+    def Prompt(self, bars, isVel, vel, scale, tempo):
+        '''
+>>>>>>> c819b97973fbe702d4fd6ca7e812b832eda8301f
         userBars = ""
         #default = 1
         velDefault = ""
@@ -24,7 +30,7 @@ class Prompt:
         velDefault = input()
         if(velDefault is "default"):
             isRandVelocity = False
-            velocity = 100
+            velVal = 100
         elif(velDefault is "change"):
             print("Do you want the velocities to be random or constant? (Enter with 'r' or 'c')")
             userVel = input()
@@ -55,6 +61,7 @@ class Prompt:
                 print("The value entered is out of range, please try again.")
                 userTemp = input()
         bars = userBars
-        vel = userVel
+        vel = velVal
         scale = "na"
         temp = userTemp
+        '''

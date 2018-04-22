@@ -5,7 +5,7 @@ import Prompt
 class GenerateFile:
 
 	#def __init__ (self, *args, **kwargs):
-	def __init__(self, bars=1, tempo=120, velocity=100):
+	def __init__(self, bars=4, tempo=120, velocity=100):
 		self.bars = bars
 		self.tempo = tempo
 	#	self.isRandVelocity = isRandVelocity

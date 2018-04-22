@@ -6,7 +6,7 @@ import random
 
 __tempo = 120
 __bars = 1
-#__isVel = False
+__isVel = False
 __vel = 100
 __scale = "na"
 __tempo = 120
@@ -20,7 +20,11 @@ while(1):
 		midiFile.generateMono()
 	elif response == 2:
 		
+<<<<<<< HEAD
 		Prompt.Options(__bars, __vel, __scale, __tempo)
+=======
+		Prompt(__bars, __isVel,__vel, __scale, __tempo)
+>>>>>>> c819b97973fbe702d4fd6ca7e812b832eda8301f
 	elif response == 3:
 		print("Thanks for using Inspiration")
 		exit()
