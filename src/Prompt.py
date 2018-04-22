@@ -50,7 +50,6 @@ class Prompt:
                 
         print("Enter if you wish to change the tempo, or choose to retain default settings. (Please enter '1' to change the settings or '0' to retain the default settings)" )
         tempo = input()
-        print(tempo)
         while(tempo != 0 and tempo != 1):
             print("You didn't enter the correct response, try again.")
             tempo = input()
