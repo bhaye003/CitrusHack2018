@@ -7,3 +7,6 @@ MFile::MFile(int tempo, double time_sig){
     this -> time_sig = time_sig;
 }
 
+MFile::addNote(Note newNote){
+    
+}
