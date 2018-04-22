@@ -8,7 +8,6 @@ while(1):
 	response = input()
 
 	if response == 1:
-<<<<<<< HEAD
 		midiFile = FileGenerator();
 	elif response == 2:
 		print("ITEM 2")
@@ -48,27 +47,27 @@ def FileGenerator():
     while(userBars != "default" and userBars < 1 ):
         print("Sorry, but your input doesn't meet the criteria given above. Please try again.")
         userBars = input()
-    if(userBars = "default"):
+    if(userBars is "default"):
         userBars = 1
     
     
     print("Do you wish to change the scale or retain the default settings? (Enter with 'change' or 'default'. ")
     velDefault = input()
-    if(velDefault = "default"):
+    if(velDefault is "default"):
         isRandVelocity = False
         velocity = 100
-    elif(velDefault = "change"):
+    elif(velDefault is "change"):
         print("Do you want the velocities to be random or constant? (Enter with 'r' or 'c')")
         userVel = input()
-        if(userVel = 'r'):
+        if(userVel is 'r'):
             velVal = random.randrange(0, 127)
-        elif(userVel = 'c'):
+        elif(userVel is 'c'):
             print("Please enter the value of the velocity. (Enter as an integer between 1 and 127)")
-            velVal = input():
-            while(velVal > 127 and velVal < 1)
+            velVal = input()
+            while(velVal > 127 and velVal < 1):
                 print("Velocity is out of range, try again.")
                 velVal = input()
-        isRandVelocity = True
+            isRandVelocity = True
         else:
             while(userVel != 'r' and userVel != 'c'):
                 print("Please enter the character 'r' or the character 'c'.")
@@ -80,7 +79,7 @@ def FileGenerator():
             
     print("Enter your preferred tempo or choose to retain default settings.")
     userTemp = input()
-    if(userTemp = 'default'):
+    if(userTemp is 'default'):
         userTemp = 120
     elif(userTemp > 999 or userTemp < 20):
         while(userTemp > 999 or userTemp < 20):
@@ -88,11 +87,11 @@ def FileGenerator():
             userTemp = input()
         
             
-    print("Enter your preferred scale or choose to retain the default settings. (Enter 'default' or integer between 20 and 999)")
-    userSca = input()
+    #print("Enter your preferred scale or choose to retain the default settings. (Enter 'default' or integer between 20 and 999)")
+    #userSca = input()
    
     
-        
+'''        
     pattern = midi.Pattern()
 # Instantiate a MIDI Track (contains a list of MIDI events)
     track = midi.Track()
@@ -110,28 +109,4 @@ def FileGenerator():
 # Print out the pattern
 #print pattern
 # Save the pattern to disk
-    midi.write_midifile("example.mid", pattern)
-=======
-		pattern = midi.Pattern()#resolution = (60 * 1000000 / bpm))
-		
-		track = midi.Track()
-		pattern.append(track)
-
-		on = midi.NoteOnEvent(tick = 0, velocity = 20, pitch=midi.A_3)
-		track.append(on)
-		
-		on1 = midi.NoteOnEvent(tick = 1, velocity = 20, pitch=midi.B_3)
-		track.append(on1)
-
-		off = midi.NoteOffEvent(tick = 400, pitch=midi.A_3)
-		track.append(off)
-
-		off1 = midi.NoteOffEvent(tick = 60, pitch=midi.B_3)
-		track.append(off1)
-		
-		eot = midi.EndOfTrackEvent(tick = 1)
-		
-		track.append(eot)
-
-		print pattern
-    	midi.write_midifile("example.mid", pattern) 
+'''
