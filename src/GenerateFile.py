@@ -1,4 +1,5 @@
 import midi
+import random
 
 class GenerateFile:
 
@@ -8,11 +9,52 @@ class GenerateFile:
 		self.isRandVelocity = isRandVelocity
 		self.velocity = velocity
 
-	def generate()
+	def generateMono():
 		pattern = midi.Pattern()
-		track = midi.Track()
+		track = midi.Track(bpm = tempo)
 
 		curr_ticks = 0
-		while(curr_ticks < tempo):
+		max_ticks = 400 * bars
+
+		pattern.append(track)
+
+		while(curr_ticks < tempo):			
+			space = random.randrange(0, 101)
+			if max_ticks < space + curr_ticks:
+				space = max_ticks - curr_ticks
+			space = random.randrange(0, 2)
+			insertNote = NoteOnEvent()
+
+	def generateChar(self, isScale=None):
+		
+		if(isScale == None):
+			note = random.randrange(0, 13)
+			if(note == 0):
+				nChar = "A_" 
+			elif(note == 1):
+				nChar = "As_"
+			elif(note == 2):
+				nChar = "B_" 
+			elif(note == 3):
+				nChar = "C_" 
+			elif(note == 4):
+				nChar = "Cs_"
+			elif(note == 5):
+				nChar = "D_"
+			elif(note == 6):
+				nchar = "Ds_"
+			elif(note == 7):
+				nChar = "E_"
+			elif(note == 8):
+				nChar = "F_"
+			elif(note == 9):
+				nChar = "Fs_"
+			elif(note== 10):
+				nchar = "G_"
+			else:
+				nchar = "G_s"
+			octave = random.randrange(0, 13)
+
 			
+
 
