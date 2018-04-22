@@ -20,11 +20,7 @@ while(1):
 		midiFile.generateMono()
 	elif response == 2:
 		
-<<<<<<< HEAD
-		Prompt.Options(__bars, __vel, __scale, __tempo)
-=======
-		Prompt(__bars, __isVel,__vel, __scale, __tempo)
->>>>>>> c819b97973fbe702d4fd6ca7e812b832eda8301f
+		message = Prompt.Prompt(__bars, __isVel,__vel, __scale, __tempo)
 	elif response == 3:
 		print("Thanks for using Inspiration")
 		exit()
