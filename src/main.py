@@ -1,5 +1,29 @@
 import midi
 # Instantiate a MIDI Pattern (contains a list of tracks)
+
+while(1):
+	print("Menu\n1) Generate File\n2)Options\n3)exit\n\n")
+	response = input()
+
+	if response == 1:
+		midiFile = FileGenerator();
+	elif response == 2:
+		print("ITEM 2")
+	elif response == 3:
+		print("Thanks for using Inspiration")
+		exit()
+	else:
+		print("Invalid number, please enter again...\n")
+
+
+
+
+
+
+
+
+
+
 pattern = midi.Pattern()
 # Instantiate a MIDI Track (contains a list of MIDI events)
 track = midi.Track()
@@ -18,4 +42,3 @@ track.append(eot)
 print pattern
 # Save the pattern to disk
 midi.write_midifile("example.mid", pattern)
- 	
