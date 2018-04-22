@@ -16,14 +16,14 @@ while(1):
 		on = midi.NoteOnEvent(tick = 0, velocity = 20, pitch=midi.A_3)
 		track.append(on)
 		
-		on = midi.NoteOnEvent(tick = 1, velocity = 20, pitch=midi.B_3)
-		track.append(on)
+		on1 = midi.NoteOnEvent(tick = 1, velocity = 20, pitch=midi.B_3)
+		track.append(on1)
 
-		off = midi.NoteOffEvent(tick = 120, pitch=midi.A_3)
+		off = midi.NoteOffEvent(tick = 400, pitch=midi.A_3)
 		track.append(off)
 
-		off = midi.NoteOffEvent(tick = 120, pitch=midi.B_3)
-		track.append(off)
+		off1 = midi.NoteOffEvent(tick = 60, pitch=midi.B_3)
+		track.append(off1)
 		
 		eot = midi.EndOfTrackEvent(tick = 1)
 		
