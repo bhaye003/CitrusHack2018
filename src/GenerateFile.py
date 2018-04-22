@@ -26,34 +26,38 @@ class GenerateFile:
 			insertNote = NoteOnEvent()
 
 	def generateChar(self, isScale=None):
-		
-		if(isScale == None):
-			note = random.randrange(0, 13)
-			if(note == 0):
-				nChar = "A_" 
-			elif(note == 1):
-				nChar = "As_"
-			elif(note == 2):
-				nChar = "B_" 
-			elif(note == 3):
-				nChar = "C_" 
-			elif(note == 4):
-				nChar = "Cs_"
-			elif(note == 5):
-				nChar = "D_"
-			elif(note == 6):
-				nchar = "Ds_"
-			elif(note == 7):
-				nChar = "E_"
-			elif(note == 8):
-				nChar = "F_"
-			elif(note == 9):
-				nChar = "Fs_"
-			elif(note== 10):
-				nchar = "G_"
-			else:
-				nchar = "G_s"
-			octave = random.randrange(0, 13)
+
+			if(isScale == None):
+
+				note = random.randrange(0, 13)
+				if(note == 0):
+					nChar = "A_" 
+				elif(note == 1):
+					nChar = "As_"
+				elif(note == 2):
+					nChar = "B_" 
+				elif(note == 3):
+					nChar = "C_" 
+				elif(note == 4):
+					nChar = "Cs_"
+				elif(note == 5):
+					nChar = "D_"
+				elif(note == 6):
+					nchar = "Ds_"
+				elif(note == 7):
+					nChar = "E_"
+				elif(note == 8):
+					nChar = "F_"
+				elif(note == 9):
+					nChar = "Fs_"
+				elif(note== 10):
+					nchar = "G_"
+				else:
+					nchar = "G_s"
+
+				octave = random.randrange(0, 13)
+				retNote = note + octave
+				return retNote
 
 			
 
