@@ -20,10 +20,19 @@ class GenerateFile:
 
 		while(curr_ticks < tempo):			
 			space = random.randrange(0, 101)
+			p = generateChar();
+			insertNote = NoteOnEvent(tick=curr_ticks,velocity=velocity,pitch=p)
 			if max_ticks < space + curr_ticks:
 				space = max_ticks - curr_ticks
-			space = random.randrange(0, 2)
-			insertNote = NoteOnEvent()
+			else:
+				curr_ticks += space
+			track.append(insertNode)
+			endNode = NoteOffEvent(tick=curr_ticks, pitch=p)
+		eot = midi.EndOfTrackEvent(tick=1)
+		track.append(eot)
+		userString = input("Please enter the file name:")
+		midi.write_midifile(userString, pattern)
+
 
 	def generateChar(self, isScale=None):
 
@@ -58,6 +67,8 @@ class GenerateFile:
 				octave = random.randrange(0, 13)
 				retNote = note + octave
 				return retNote
+
+
 
 			
 
