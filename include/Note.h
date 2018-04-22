@@ -14,6 +14,6 @@ class Note {
         string pitch;
         double length;
         int velocity;
-}
+};
 
 #endif

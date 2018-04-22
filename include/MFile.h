@@ -3,4 +3,10 @@
 #include<iostream>
 #include<string>
 
-class
+class MFile{
+  private:
+    int tempo;
+    double time_sig;
+};
+
+#endif
