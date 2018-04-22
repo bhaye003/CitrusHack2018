@@ -9,25 +9,25 @@ class GenerateFile:
 		self.isRandVelocity = isRandVelocity
 		self.velocity = velocity
 
-	def generateMono():
+	def generateMono(self):
 		pattern = midi.Pattern()
-		track = midi.Track(bpm = tempo)
+		track = midi.Track(bpm = self.tempo)
 
 		curr_ticks = 0
-		max_ticks = 400 * bars
+		max_ticks = 400 * self.bars
 
 		pattern.append(track)
 
-		while(curr_ticks < tempo):			
+		while(curr_ticks < self.tempo):			
 			space = random.randrange(0, 101)
-			p = generateChar();
-			insertNote = NoteOnEvent(tick=curr_ticks,velocity=velocity,pitch=p)
+			p = self.generateChar();
+			insertNote = midi.NoteOnEvent(curr_ticks, self.velocity, p)
 			if max_ticks < space + curr_ticks:
 				space = max_ticks - curr_ticks
 			else:
 				curr_ticks += space
-			track.append(insertNode)
-			endNode = NoteOffEvent(tick=curr_ticks, pitch=p)
+			track.append(insertNote)
+			endNode = midi.NoteOffEvent(tick=curr_ticks, pitch=p)
 		eot = midi.EndOfTrackEvent(tick=1)
 		track.append(eot)
 		userString = input("Please enter the file name:")
