@@ -1,9 +1,10 @@
 import midi
 import random
-import Options
+import Prompt
 
 class GenerateFile:
 
+	#def __init__ (self, *args, **kwargs):
 	def __init__(self, bars=1, tempo=120, velocity=100):
 		self.bars = bars
 		self.tempo = tempo
@@ -12,17 +13,18 @@ class GenerateFile:
 
 	def generateMono(self):
 		pattern = midi.Pattern()
-		track = midi.Track(bpm = self.tempo)
-
+		track = midi.Track()
 		curr_ticks = 0
 		max_ticks = 400 * self.bars
+		t = midi.SetTempoEvent()
+		t.set_bpm(self.tempo)
 
 		pattern.append(track)
 
 		while(curr_ticks < self.tempo):			
 			space = random.randrange(0, 101)
 			p = self.generateChar();
-			insertNote = midi.NoteOnEvent(curr_ticks, self.velocity, p)
+			insertNote = midi.NoteOnEvent(tick=curr_ticks, velocity=self.velocity, pitch=p)
 			if max_ticks < space + curr_ticks:
 				space = max_ticks - curr_ticks
 			else:
@@ -31,7 +33,7 @@ class GenerateFile:
 			endNode = midi.NoteOffEvent(tick=curr_ticks, pitch=p)
 		eot = midi.EndOfTrackEvent(tick=1)
 		track.append(eot)
-		userString = input("Please enter the file name:")
+		userString = raw_input("Please enter the file name:")
 		midi.write_midifile(userString, pattern)
 
 
