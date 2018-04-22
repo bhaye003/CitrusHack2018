@@ -1,12 +1,13 @@
 import midi
 import random
+import Options
 
 class GenerateFile:
 
-	def __init__(self, bars=1, tempo=120, isRandVelocity=True, velocity=100):
+	def __init__(self, bars=1, tempo=120, velocity=100):
 		self.bars = bars
 		self.tempo = tempo
-		self.isRandVelocity = isRandVelocity
+	#	self.isRandVelocity = isRandVelocity
 		self.velocity = velocity
 
 	def generateMono(self):
